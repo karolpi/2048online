@@ -1,0 +1,32 @@
+@(from: Int, to: Int)(implicit assetsFinder: AssetsFinder)
+
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <style>
+            th, td {
+                width: 1px;
+                height: 1px;
+                text-align: center;
+                padding: 0;
+                color: white;
+                padding: 2px;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            .even {
+                background-color: black;
+            }
+            .odd {
+                background-color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <option></option>
+        @for(i <- from to to) {
+           @multiplicationtable(i)
+        }
+    </body>
+</html>

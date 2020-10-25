@@ -1,0 +1,30 @@
+@(rows: Int)
+    <table>
+        @for(i <- 1 to rows) {
+            <tr>
+                @for(j <- 1 to rows) {
+                    <td class="
+                    @*
+
+                        @{
+                        val multi = i * j
+                        def numLength(number: Int, length: Int): Int = {
+                        if (number == 0) length
+                        else numLength(number / 10, length + 1)
+                        }
+
+                        if (numLength(multi, 0) % 2 == 0) "even"
+                        else "odd"
+                        }
+
+                    *@
+                        @{
+                            val multi = i * j
+                            if (multi % rows == 0) "even"
+                            else "odd"
+                        }
+                    "></td>
+                }
+            </tr>
+        }
+    </table>
